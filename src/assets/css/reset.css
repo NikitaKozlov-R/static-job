@@ -3,6 +3,14 @@
    License: none (public domain)
 */
 
+:root {
+  --color-primary: hsl(180, 29%, 50%);
+  --color-background: hsl(180, 52%, 96%);
+  --color-filter-tablets: hsl(180, 31%, 95%);
+  --color-dark-primary: hsl(180, 8%, 52%);
+  --color-dark-gray: hsl(180, 14%, 20%);
+}
+
 html,
 body,
 div,
@@ -87,8 +95,9 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Spartan", sans-serif;
   vertical-align: baseline;
 }
 

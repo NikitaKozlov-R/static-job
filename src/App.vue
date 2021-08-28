@@ -1,16 +1,21 @@
 <template>
-  <div id="app">
-    
-  </div>
+  <main>
+    <main-header />
+    <main-list />
+  </main>
 </template>
 
 <script>
 
+import MainHeader from '@/components/main-header.vue'
+import MainList from '@/components/main-list.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    MainHeader: MainHeader,
+    MainList: MainList
+  }
 }
+
 </script>
-
-<style>
-
-</style>
