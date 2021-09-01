@@ -17,16 +17,17 @@
 
 <script>
 
-import vacancies from '@/assets/data'
 import MainListShortDescription from '@/components/main-list-short-description.vue'
 import MainListTools from '@/components/main-list-tools.vue'
 
 export default {
   data() {
     return {
-      vacancies
+        
     }
   },
+
+  props: [ 'vacancies' ],
 
   components: {
     MainListShortDescription,
@@ -59,13 +60,16 @@ export default {
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 @media screen and (max-width: 1280px) {
+  .main-list {
+    padding: 4rem 0;
+  }
   .main-list-item {
-    width: 90%;
+    width: 100%;
     height: auto;
     flex-direction: column;
     align-items: flex-start;
     margin: 0 0 2rem 0;
-    box-sizing: border-box;
+    padding: 0 16px;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span class="main-list__tools-wrap">
     <div class="main-list__tools">
       <button class="main-list__tool-lang"
         @click="$emit('select-filter', vacancy.role)"
@@ -41,7 +41,7 @@ export default {
   margin: 0 24px 0 0;
 }
 .main-list__tool-lang {
-  font-size: 0.6rem;
+  font-size: .6rem;
   font-weight: 700;
   border-radius: 4px;
   padding: 8px 6px 6px 6px;
@@ -57,5 +57,19 @@ export default {
 .main-list__tool-lang:hover {
   background-color: var(--color-primary);
   color: white;
+}
+@media screen and (max-width: 1280px) {
+  .main-list__tools {
+    flex-wrap: wrap;
+    margin: 8px 0 16px;
+    border-top: 1px solid var(--color-dark-primary);
+  }
+  .main-list__tool-lang {
+    font-size: .8rem;
+    margin: 8px 8px 0 0;
+  }
+  .main-list__tools-wrap {
+    width: 100%;
+  }
 }
 </style>

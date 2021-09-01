@@ -34,7 +34,7 @@ export default {
 <style>
 .main-filter {
   position: absolute;
-  width: calc(1024px - 48px);
+  width: 1024px;
   height: 56px;
   margin: 84px 0 0 0;
   border-radius: 4px;
@@ -94,5 +94,20 @@ export default {
 .main-filter__clear-btn:hover {
   color: var(--color-dark-gray);
   border-bottom: .1rem solid var(--color-dark-gray);
+}
+@media screen and (max-width: 1024px) {
+  .main-filter {
+    margin-top: -28px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 16px 16px 8px 16px;
+  }
+  .main-filter__wrap {
+    flex-wrap: wrap;
+  }
+  .main-filter__item {
+    margin: 0 8px 8px 0;
+  } 
 }
 </style>

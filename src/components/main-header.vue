@@ -10,7 +10,7 @@
 
 <style>
   .main-header {
-    width: 100%;
+    width: 100vw;
     height: 112px;
     background-image: url('~@/assets/img/bg-header-desktop.svg');
     background-color: var(--color-primary);

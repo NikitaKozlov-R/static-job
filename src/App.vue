@@ -8,6 +8,7 @@
     />
     <main-list 
       @select-filter="selectFilter"
+      :vacancies="vacancies"
     />
   </main>
 </template>
@@ -16,6 +17,7 @@
 import MainHeader from '@/components/main-header.vue'
 import MainList from '@/components/main-list.vue'
 import MainFilter from '@/components/main-filter.vue'
+import vacancies from '@/assets/data'
 
 export default {
   name: 'App',
@@ -26,7 +28,8 @@ export default {
   },
   data() {
     return {
-      vacancyFilter: []
+      vacancyFilter: [],
+      vacancies
     }
   },
   methods: {
@@ -38,7 +41,6 @@ export default {
     },
     selectFilter(filter) {
       if(this.vacancyFilter.length === 8) {
-        alert('You can\'t add more than 8 filters ')
         return false
       }
       if(this.vacancyFilter.indexOf(filter) != -1) {
@@ -55,5 +57,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--color-background);
+  padding: 0 5%;
+  overflow-x: hidden;
 }
 </style>

@@ -11,6 +11,13 @@
   --color-dark-gray: hsl(180, 14%, 20%);
 }
 
+* {
+  box-sizing: border-box;
+}
+html {
+  background-color: var(--color-background);
+}
+
 /* latin-ext */
 @font-face {
   font-family: "Spartan";
