@@ -1,8 +1,14 @@
 <template>
-  <main>
+  <main class="main">
     <main-header />
-    <main-filter />
-    <main-list />
+    <main-filter 
+      :vacancyFilter="vacancyFilter"
+      @remove-filter="removeFilter"
+      @clear-filters="clearFilters"
+    />
+    <main-list 
+      @select-filter="selectFilter"
+    />
   </main>
 </template>
 
@@ -17,6 +23,30 @@ export default {
     MainHeader,
     MainList,
     MainFilter
+  },
+  data() {
+    return {
+      vacancyFilter: []
+    }
+  },
+  methods: {
+    removeFilter(index) {
+      this.vacancyFilter.splice(index, 1);
+    },
+    clearFilters() {
+      this.vacancyFilter = []
+    },
+    selectFilter(filter) {
+      this.vacancyFilter.push(filter)
+    }
   }
 }
 </script>
+
+<style>
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>

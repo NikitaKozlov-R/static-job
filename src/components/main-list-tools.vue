@@ -1,24 +1,30 @@
 <template>
   <span>
     <div class="main-list__tools">
-      <p class="main-list__tool-lang">
+      <button class="main-list__tool-lang"
+        @click="$emit('select-filter', vacancy.role)"
+      >
         {{ vacancy.role }}
-      </p>
-      <p class="main-list__tool-lang">
+      </button>
+      <button class="main-list__tool-lang"
+        @click="$emit('select-filter', vacancy.level)"
+      >
         {{ vacancy.level }}
-      </p>
-      <p class="main-list__tool-lang"
+      </button>
+      <button class="main-list__tool-lang"
         v-for="tool in vacancy.tools"
         :key="tool"
+        @click="$emit('select-filter', tool)"
       >
         {{ tool }}
-      </p>
-      <p class="main-list__tool-lang"
+      </button>
+      <button class="main-list__tool-lang"
         v-for="lang in vacancy.languages"
         :key="lang"
+        @click="$emit('select-filter', lang)"
       >
         {{ lang }}
-      </p>
+      </button>
     </div>
   </span>
 </template>
@@ -42,6 +48,14 @@ export default {
   margin: 0 0 0 8px;
   background-color: var(--color-background);
   color: var(--color-primary);
-  cursor: pointer;
+  border: none;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.main-list__tool-lang:focus {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0, 0, 0, 0.425);
+}
+.main-list__tool-lang:hover {
+  background-color: var(--color-primary);
+  color: white;
 }
 </style>

@@ -87,6 +87,11 @@ export default {
 .main-list-item__position {
   color: var(--color-dark-gray);
   font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.main-list-item__position:hover {
+  color: var(--color-primary);
 }
 .main-list-item__bottom-panel {
   display: flex;

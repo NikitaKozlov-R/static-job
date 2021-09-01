@@ -9,6 +9,7 @@
         />
         <main-list-tools
           :vacancy="vacancy"
+          @select-filter="$emit('select-filter', $event)"
         />
       </li>
   </ul>
@@ -37,18 +38,18 @@ export default {
 
 <style>
 .main-list {
-  background-color: var(--color-background);
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 0 0 0;
+  padding: 4rem 0 0 0;
+  background-color: var(--color-background);
 }
 .main-list-item {
   width: 1024px;
   height: 112px;
   margin: 0 0 1rem 0;
   border-radius: 4px;
-  /* box-shadow: 0 1px 3px hsl(180, 29%, 50%), 0 1px 2px hsla(180, 29%, 50%, 0.144); */
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.096), 0 15px 12px hsla(180, 29%, 50%, 0.178);
   display: flex;
   flex-direction: row;
@@ -56,5 +57,6 @@ export default {
   justify-content: space-between;
   background-color: white;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 </style>
