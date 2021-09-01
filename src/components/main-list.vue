@@ -56,7 +56,16 @@ export default {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  overflow: hidden;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+@media screen and (max-width: 1280px) {
+  .main-list-item {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 2rem 0;
+    box-sizing: border-box;
+  }
 }
 </style>

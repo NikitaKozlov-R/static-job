@@ -107,4 +107,23 @@ export default {
   line-height: 8px;
   margin: 0 8px 0 8px;
 }
+@media screen and (max-width: 1280px){
+  .main-list__short-description {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main-list__short-description__logo {
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 8px 16px;
+  }
+  .main-list__preview {
+    height: 64px;
+    width: 100%;
+    padding: 0 0 16px 0;
+    border-bottom: 1px solid var(--color-dark-gray);
+  }
+}
 </style>

@@ -37,6 +37,13 @@ export default {
       this.vacancyFilter = []
     },
     selectFilter(filter) {
+      if(this.vacancyFilter.length === 8) {
+        alert('You can\'t add more than 8 filters ')
+        return false
+      }
+      if(this.vacancyFilter.indexOf(filter) != -1) {
+        return false
+      }
       this.vacancyFilter.push(filter)
     }
   }
