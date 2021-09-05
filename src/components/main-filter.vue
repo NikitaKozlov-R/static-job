@@ -1,19 +1,23 @@
 <template>
   <div class="main-filter"
-    v-if="vacancyFilter.length"
+    v-if="isVacancyFilterExist"
   >
     <div class="main-filter__wrap">
-      <div class="main-filter__item"
-        v-for="(filter, index) in vacancyFilter"
-        :key="filter"
+      <template
+        v-for="(family, key) in vacancyFilter"
       >
-        <p class="main-filter__text-filter">{{ filter }}</p>
-        <button class="main-filter__remove-btn"
-          @click="$emit('remove-filter', index)"
+        <div class="main-filter__item"
+          v-for="(filter, index) in family"
+          :key="filter"
         >
-          <img class="main-filter__remove-btn__svg" src="@/assets/img/remove-btn.svg" type="image/svg+xml" draggable="false">
-        </button>
-      </div>
+          <p class="main-filter__text-filter">{{ filter }}</p>
+          <button class="main-filter__remove-btn"
+            @click="$emit('remove-filter', {index: index, family: key})"
+          >
+            <img class="main-filter__remove-btn__svg" src="@/assets/img/remove-btn.svg" type="image/svg+xml" draggable="false">
+          </button>
+        </div>
+      </template>
     </div>
     <button class="main-filter__clear-btn"
       @click="$emit('clear-filters')"
@@ -26,7 +30,20 @@
 <script>
 export default {
   props: {
-    vacancyFilter: Array
+    vacancyFilter: Object
+  },
+  computed: {
+    isVacancyFilterExist() {
+      if(
+        this.vacancyFilter.role.length != 0 ||
+        this.vacancyFilter.level.length !=0 ||
+        this.vacancyFilter.languages.length !=0 ||
+        this.vacancyFilter.tools.length !=0
+      ) {
+        return true
+      }
+      return false
+    }
   }
 }
 </script>

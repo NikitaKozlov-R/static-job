@@ -2,26 +2,26 @@
   <span class="main-list__tools-wrap">
     <div class="main-list__tools">
       <button class="main-list__tool-lang"
-        @click="$emit('select-filter', vacancy.role)"
+        @click="$emit('select-filter', {filter: vacancy.role, family: 'role'})"
       >
         {{ vacancy.role }}
       </button>
       <button class="main-list__tool-lang"
-        @click="$emit('select-filter', vacancy.level)"
+        @click="$emit('select-filter', {filter: vacancy.level, family: 'level'})"
       >
         {{ vacancy.level }}
       </button>
       <button class="main-list__tool-lang"
         v-for="tool in vacancy.tools"
         :key="tool"
-        @click="$emit('select-filter', tool)"
+        @click="$emit('select-filter', {filter: tool, family: 'tools'})"
       >
         {{ tool }}
       </button>
       <button class="main-list__tool-lang"
         v-for="lang in vacancy.languages"
         :key="lang"
-        @click="$emit('select-filter', lang)"
+        @click="$emit('select-filter', {filter: lang, family: 'languages'})"
       >
         {{ lang }}
       </button>
